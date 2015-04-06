@@ -2,11 +2,10 @@
 layout: post
 title: Grid coordinates of cubic shells in n-dimensional space
 ---
-Recently, I've beeb thinking about grid coordinates in n-dimensional systems. When I first encountered a problem that required the generation of the lattice coordinates in n-space I was temporarily stumped. I was unsure of how to write an algorithm that can generate all points as a function of the dimension and the length of the cube. Previously I always knew what dimensions I was working in and creating the coordinates of a cube of length `n` in three dimensions simply came down to nested loops:
+Recently, I've beeb thinking about grid coordinates in n-dimensional systems. When I first encountered a problem that required the generation of the lattice coordinates in n-space I was temporarily stumped. I was unsure of how to write an algorithm that can generate all points as a function of the dimension and the length of the cube. Previously I always knew what dimensions I was working in and creating the coordinates of a cube of length _N_ in three dimensions simply came down to nested loops:
 
 
 ```python
-length = 10
 coordinates = []
 for i in range(length):
 	for j in range(length):
@@ -15,4 +14,19 @@ for i in range(length):
 ```
 
 
-This algorithm generates all of the lattice coordinates of a cube in three dimensions. However, it is limited to just that. Since I wanted a more robust algorithm that would return all coordinates based on the lenght as well as the dimension, I started to to think about approaching this problem from a different angle.
+This algorithm generates all of the lattice coordinates of a cube in three dimensions. However, it is limited to just that. Since I wanted a more robust algorithm that would return all coordinates based on the length as well as the dimension, I started to to think about approaching this problem from a different angle. Let us a consider a cube of length _N_ in d-dimensional space. First I calculated the total number of points in this cube _N**d_. now instead writing nested loops (one for each dimension) I wrote a single one to loop through the number of points I determined. For each iteration in the loop I change bases from base 10 to the base _N_. This works because we know that in a cube of length _N_ the only possible coordinate values are 0,1,...,n-1. 
+
+
+```python
+points = N**d
+for i in xrange(points):
+	cord = ()
+	for j in range(d-1,-1,-1): 
+		temp = N**j
+		if temp<=i:
+			cord += (i//temp,)
+			i=i%temp
+		else:
+			cord += (0,)
+	cords += [cord]
+```
