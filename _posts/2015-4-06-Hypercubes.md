@@ -2,8 +2,5 @@
 layout: post
 title: Grid coordinates of cubic shells (extended to n dimensions)
 ---
-<<<<<<< HEAD
 lets talk about that
-=======
-lets talk about that
->>>>>>> origin/master
+
