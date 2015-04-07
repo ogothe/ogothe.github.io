@@ -80,13 +80,13 @@ Shell:  3
 [(1, 2), (-2, 2), (-2, 1), (-1, 2), (-2, 0), (2, 2), (2, -1), (-1, -2), (2, 1), (-2, -1), (2, 0), (2, -2), (-2, -2), (0, -2), (1, -2), (0, 2)]
 ```
 
-Lets plot the results from _N=3_ and _d=2_ points to verify we have really obtained the correct points for each shell:
+Lets plot the results from _N=1,2,3_ and _d=2_ points to verify we have really obtained the correct points for each shell:
 
 ![2D shells]({{ site.baseurl }}/images/output_ST8wcz.gif "an image title")
 
-And _N=3_ and _d=3_:
+And _N=1,2,3_ and _d=3_:
 
 ![2D shells]({{ site.baseurl }}/images/output_73UcYH.gif "an image title")
 
-We now have a working algorithm that produces the shells of a cube in any dimension. Currently, the code is fairly inefficient as it reproduces all coordinates for each shell. I will think about whether there is a good way of  producing just the shell coordinates later.
+These plots show that this algorithm produces the shells of a cube in 2 and 3-D. Coordinates in higher dimensions are also correctly reproduced but are very difficult to visulize with plots. Currently, the code is fairly inefficient as it reproduces all coordinates for each shell. I will think about whether there is a good way of  producing just the shell coordinates later.
 
