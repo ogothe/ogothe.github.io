@@ -16,7 +16,7 @@ for i in range(length):
 ```
 
 
-This algorithm generates all of the lattice coordinates of a cube in three dimensions. However, it is limited to just that. Since I wanted a more robust algorithm that would return all coordinates based on the length as well as the dimension, I started to to think about approaching this problem from a different angle. Let us a consider a cube of length _N_ in d-dimensional space. First I calculated the total number of points in this cube _N**d_. now instead writing nested loops (one for each dimension) I wrote a single one to loop through the number of points I determined. For each iteration in the loop I change bases from base 10 to the base _N_. This works because we know that in a cube of length _N_ the only possible coordinate values are 0,1,...,n-1. The nested loop ensures that each point is described in _d_-dimensional space.
+This algorithm generates all of the lattice coordinates of a cube in three dimensions. However, it is limited to just that. Since I wanted a more robust algorithm that would return all coordinates based on the length as well as the dimension, I started to to think about approaching this problem from a different angle. Considering cube of length _N_ in d-dimensional space, First I calculated the total number of points in this cube as _N**d_. now instead writing nested loops (one for each dimension) I simply loop through the number of points I determined. By changing the value of each point in `range(N**d)` from base 10 to the base _N_ we obtain all possible lattice coordinates. This works because we know that in a cube of length _N_ the only possible coordinate values are 0,1,...,n-1. Thus the algorithm loops through all possible coordinates until it reaches _N**d_.
 
 
 ```python
