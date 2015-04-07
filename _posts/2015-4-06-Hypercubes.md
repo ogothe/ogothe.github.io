@@ -88,5 +88,5 @@ And _N=3_ and _d=3_:
 
 ![2D shells]({{ site.baseurl }}/images/output_73UcYH.gif "an image title")
 
-As we cand see we now have a working algorithm that produces the shells of a cube in any dimension. Currently, the code is fairly inefficient as it reproduces all coordinates for each shell. I will think about whether there is a good way of  producing just the shell coordinates later.
+We now have a working algorithm that produces the shells of a cube in any dimension. Currently, the code is fairly inefficient as it reproduces all coordinates for each shell. I will think about whether there is a good way of  producing just the shell coordinates later.
 
