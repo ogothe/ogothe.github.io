@@ -68,7 +68,7 @@ for N in range(1,N+1,2):
 		shells += [cords]
 ```
 
-Not much has changed except for the movement of the origin and building up full shells. Lets print the first three shells in 2 dimensional space:
+Not much has changed except for the movement of the origin and building up full shells. The results for the first two shells in 2 dimensional space are:
 
 
 ```python
