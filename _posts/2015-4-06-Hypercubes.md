@@ -42,7 +42,7 @@ Executing this code for d=3 and n=3 yields the following coordinates below. Howe
 [(0, 0, 0), (0, 0, 1), (0, 0, 2), (0, 1, 0), (0, 1, 1), (0, 1, 2), (0, 2, 0), (0, 2, 1), (0, 2, 2), (1, 0, 0), (1, 0, 1), (1, 0, 2), (1, 1, 0), (1, 1, 1), (1, 1, 2), (1, 2, 0), (1, 2, 1), (1, 2, 2), (2, 0, 0), (2, 0, 1), (2, 0, 2), (2, 1, 0), (2, 1, 1), (2, 1, 2), (2, 2, 0), (2, 2, 1), (2, 2, 2)]
 ```
 
-Now lets extend this idea into shells around the origin (0,0,...,0). In the previous example the origin was in the corner of the cube. We now want to move it to the center. we can do this by subtracting N//2 from each coordinate where N is the width of the shell the point is a part of. Additionaly we also want build the cube from the center incrementally. First we look at the origin which has a width of 1, the first shell has a width of 3 followed by a width of 5. We see that the width of the shells is givgen by _2*n+1_ where n is the shell number. Again, lets look at a cube of length _N_ in d dimensions.
+Now lets extend this idea into shells around the origin (0,0,...,0). In the previous example, the origin was in the corner of the cube. We now want to move it to the center. we can do this by subtracting N//2 from each coordinate where N is the width of the shell that the particular point is a part of. Additionaly, we also want build the cube from the center incrementally. First we look at the origin which has a width of 1, the first shell has a width of 3 followed by a width of 5. We see that the width of the shells is givgen by _2*n+1_ where n is the shell number. Again, lets look at a cube of length _N_ in d dimensions.
 
 
 ```python
