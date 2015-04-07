@@ -1,8 +1,10 @@
 ---
 layout: post
-title: Grid coordinates of cubic shells in n-dimensional space
+title: "Grid coordinates of cubic shells in n-dimensional space"
+published: true
 ---
-Recently, I've beeb thinking about grid coordinates in n-dimensional systems. When I first encountered a problem that required the generation of the lattice coordinates in n-space I was temporarily stumped. I was unsure of how to write an algorithm that can generate all points as a function of the dimension and the length of the cube. Previously I always knew what dimensions I was working in and creating the coordinates of a cube of length _N_ in three dimensions simply came down to nested loops:
+
+Recently, I've been thinking about grid coordinates in n-dimensional systems. When I first encountered a problem that required the generation of the lattice coordinates in n-space I was temporarily stumped. I was unsure of how to write an algorithm that can generate all points as a function of the dimension and the length of the cube. Previously I always knew what dimensions I was working in and creating the coordinates of a cube of length _N_ in three dimensions simply came down to nested loops:
 
 
 ```python
