@@ -21,22 +21,63 @@ This algorithm generates all of the lattice coordinates of a cube in three dimen
 
 ```python
 points = N**d
-for i in xrange(points):
+coordinates =[]
+for point in xrange(points):
 	cord = ()
-	for j in range(d-1,-1,-1): 
-		temp = N**j
-		if temp<=i:
-			cord += (i//temp,)
-			i=i%temp
+	for dimension in range(d-1,-1,-1): 
+		N_d = N**dimension
+		if N_d<=p:
+			cord += (point//N_d,)
+			point=point%N_d
 		else:
 			cord += (0,)
-	cords += [cord]
+	coordinates += [cord]
 ```
 
 
-Executing this code for d=3 and n=3 yields the following coordinates:
+Executing this code for d=3 and n=3 yields the following coordinates below. However, what has really happened here is that we converted a decimal numbers into base _d_ numbers.
 
 
 ```python
 [(0, 0, 0), (0, 0, 1), (0, 0, 2), (0, 1, 0), (0, 1, 1), (0, 1, 2), (0, 2, 0), (0, 2, 1), (0, 2, 2), (1, 0, 0), (1, 0, 1), (1, 0, 2), (1, 1, 0), (1, 1, 1), (1, 1, 2), (1, 2, 0), (1, 2, 1), (1, 2, 2), (2, 0, 0), (2, 0, 1), (2, 0, 2), (2, 1, 0), (2, 1, 1), (2, 1, 2), (2, 2, 0), (2, 2, 1), (2, 2, 2)]
 ```
+
+Now lets extend this idea into shells around the origin (0,0,...,0). In the previous example the origin was in the corner of the cube. We now want to move it to the center. we can do this by subtracting N//2 from each coordinate where N is the width of the shell the point is a part of. Additionaly we also want build the cube from the center incrementally. First we look at the origin which has a width of 1, the first shell has a width of 3 followed by a width of 5. We see that the width of the shells is givgen by _2*n+1_ where n is the shell number. Again, lets look at a cube of length _N_ in d dimensions.
+
+
+```python
+shells = []
+for N in range(1,2*length+1,2):
+	cords = []
+	points = N**d
+	for point in xrange(points):
+		cord = ()
+		for dimension in range(d-1,-1,-1):
+			N_d = N**dimension
+			if N_d<=point:
+				cord += (point//N_d-N//2,)
+				point=point%N_d
+			else:
+				cord += (0-N//2,)
+		coordinates += [cord]
+	if len(shells)>0:
+		for i in range(len(shells)):
+			coordinates = list(set(coordinates)-set(shells[i]))
+		shells+=[coordinates]
+	else:
+		shells += [cords]
+```
+
+Not much has changed except for the movement of the origin and building up full shells. Lets print the first three shells in 2 dimensional space:
+
+
+```python
+Shell:  1
+[(0, 0)]
+Shell:  2
+[(0, 1), (-1, 1), (-1, 0), (-1, -1), (0, -1), (1, 0), (1, -1), (1, 1)]
+Shell:  3
+[(1, 2), (-2, 2), (-2, 1), (-1, 2), (-2, 0), (2, 2), (2, -1), (-1, -2), (2, 1), (-2, -1), (2, 0), (2, -2), (-2, -2), (0, -2), (1, -2), (0, 2)]
+```
+
+Lets plot the results from _N=3_ and _d=3_ points to verify we have really obtained all of the correct points for each shell.
