@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Taking advantage of Amazon's price drop policy"
-published = false
+published = true
 ---
 
 If you purchase an item sold by Amazon and the price drops within 7 days, they will refund the difference. It used to be thirty days but too many folks took advantage of that. I quite like this policy, but I have to admit that I rarely ever go and check whether the prices of dropped within a week on any of my items. Since I have been exploring APIs from different companies lately, I decided this would be an excellent opportunity to work with Google's Gmail API and combine it with scraping Amazon price data to automatically determine whether I am eligible for a refund. 
